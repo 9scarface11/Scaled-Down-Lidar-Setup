@@ -1,3 +1,4 @@
+-------------------------------------------DESIGN-------------------------------------------
 So, I made a prototype, where I thought of solving wire entanglement problem using Bearings.
 
 Later I figured out, it wasn't a proper solution that solution.
@@ -6,3 +7,12 @@ After some research got to know, there exist Slip Rings.
 So I made custom sensor mount personalized to my project requirement.
 
 Once, I will be satisfied with my design, I will send the design for 3D printing.
+
+-------------------------------------FOLDER STRUCTURE----------------------------------------
+
+Initial Design: Contains First Draft Assembly with bearings
+
+Parts: Contains Connecting Rod and Servo Head
+
+Slip Ring: Contains, Slip Ring Assembly
+
