@@ -2,7 +2,7 @@
 
 I am working on a self project, making a lidar of my own.
 
--Components used:
+---Components used:
   
   Arduino Nano
   
@@ -10,7 +10,7 @@ I am working on a self project, making a lidar of my own.
   
   SG90 Servo
 
--Progress till now:
+---Progress till now:
   
   The prototyping is done in Solidworks. 
   
@@ -20,13 +20,13 @@ I am working on a self project, making a lidar of my own.
   
   A circuit check is being done.
 
--Next Steps:
+---Next Steps:
   
   I am working on writing Arduino Code for Sensor Sweep, integrating Servo and Sensor.
   
   For converting sensor data into Point Clouds, Angle Rotated, and distance will be converted to Cartesian Numbers, and will be plotted accordingly.
 
--Future Plans:
+---Future Plans:
   
   Integrating MPU6050 and adding state estimation, using Localization and Odometry backed by IMU.
 
