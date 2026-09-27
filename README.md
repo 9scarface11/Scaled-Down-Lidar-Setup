@@ -20,9 +20,19 @@ I am working on a self project, making a lidar of my own.
   
   A circuit check is being done.
 
+-------------------------------------------- 2D sweeping motion achieved ---------------------------------------------------------------------------
+Check out the code for sweeping
+Codes
+|
+|- 2d Sweeping motion
+|
+|-TOF sensor Calibration 
+
+
+
 ---Next Steps:
   
-  I am working on writing Arduino Code for Sensor Sweep, integrating Servo and Sensor.
+  I am working on writing Arduino Code for integrating Servo and Sensor.
   
   For converting sensor data into Point Clouds, Angle Rotated, and distance will be converted to Cartesian Numbers, and will be plotted accordingly.
 
