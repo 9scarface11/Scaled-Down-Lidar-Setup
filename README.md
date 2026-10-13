@@ -54,9 +54,9 @@ custom-lidar/
 |          ├── combined/    # Both sensor and servo integrated
 │   └── Vl53l0x_setup/      # TOF setup and calibration
 ├── Point Cloud Raw/
-|          ├── 3-D sweeping_motion/
-|          ├── 3-D sweeping_motion/                   # (planned) recorded scans as CSV
-└── python/                 # (planned) CSV → 3D point cloud
+|          ├── logger.py/             # python script for recording scanner and servo values
+|          ├── csv/                   # (planned) recorded scans as CSV
+└── CAD/                 # For prototyping design
 ```
 
 See [`Codes/3d_sweep`](Codes/3d_sweep) for the sweeping code.
