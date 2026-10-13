@@ -1,44 +1,70 @@
---------------------Custom Lidar--------------------------------------
+# Custom LiDAR
 
-I am working on a self project, making a lidar of my own.
+A DIY 3D LiDAR built from a time-of-flight sensor on a pan–tilt servo mount. The sensor sweeps a scene, and every (pan angle, tilt angle, distance) reading is converted into a 3D point.
 
----Components used:
-  
-  Arduino Nano
-  
-  VL530LX Time of Flight sensor
-  
-  SG90 Servo
+## Hardware
 
----Progress till now:
-  
-  The prototyping is done in Solidworks. 
-  
-  I had to make a custom slip ring, because of the problem that will arise, where the sensor's wires might cause problem because of torsion.
-  
-  Sensor Calibration is done.
-  
-  A circuit check is being done.
+| Component | Role |
+|---|---|
+| Arduino Nano | Controls the servos, reads the sensor, streams data over serial |
+| VL53L0X ToF sensor | Distance measurement (I2C) |
+| 2× SG90 servo | Pan (horizontal) and tilt (vertical) motion |
+| Buck converter | Stable 5 V supply for the servos |
+| MPU6050 *(planned)* | IMU for orientation / state estimation |
 
--------------------------------------------- 2D sweeping motion achieved ---------------------------------------------------------------------------
-Check out the code for sweeping
-Codes
-|
-|- 2d Sweeping motion
-|
-|-TOF sensor Calibration 
+**Wiring:** pan servo on D9, tilt servo on D10, ToF on I2C (A4/A5). Servos run from the buck converter's 5 V, the Nano is powered over USB, and all grounds are shared.
 
+## Status
 
+- [x] Servos connected and working
+- [x] Sensor and servos working together
+- [x] First draft of sensor data collected
+- [x] 3D sweeping motion achieved
+- [ ] ToF sensor calibration (in progress)
+- [ ] Convert CSV data to a 3D point cloud
+- [ ] IMU integration
+- [ ] Mount on an RC car
 
----Next Steps:
-  
-  I am working on writing Arduino Code for integrating Servo and Sensor.
-  
-  For converting sensor data into Point Clouds, Angle Rotated, and distance will be converted to Cartesian Numbers, and will be plotted accordingly.
+## How it works
 
----Future Plans:
-  
-  Integrating MPU6050 and adding state estimation, using Localization and Odometry backed by IMU.
+The Nano sweeps the servos and sends one CSV line per reading:
 
-Further Plans:
-Integrating this whole system with an RC car.
+```text
+pan,tilt,dist_mm
+```
+
+Each reading is converted to Cartesian coordinates, with pan angle θ, tilt angle φ and distance d:
+
+```text
+x = d · cos(φ) · cos(θ)
+y = d · cos(φ) · sin(θ)
+z = d · sin(φ)
+```
+
+The points are then plotted as a 3D point cloud with Matplotlib.
+
+## Repository structure
+
+```text
+custom-lidar/
+├── README.md
+├── Codes/
+│   ├── 3-D sweeping_motion/# Sweeping
+│   ├── combined/
+|          ├── combined/    # Both sensor and servo integrated
+│   └── Vl53l0x_setup/      # TOF setup and calibration
+├── Point Cloud Raw/
+|          ├── 3-D sweeping_motion/
+|          ├── 3-D sweeping_motion/                   # (planned) recorded scans as CSV
+└── python/                 # (planned) CSV → 3D point cloud
+```
+
+See [`Codes/3d_sweep`](Codes/3d_sweep) for the sweeping code.
+
+## Roadmap
+
+**Next:** convert the CSV points into a 3D point cloud using Matplotlib or similar Python libraries.
+
+**Later:** integrate the MPU6050 and add state estimation (localization and odometry backed by the IMU).
+
+**Eventually:** integrate the whole system with an RC car.
