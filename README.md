@@ -20,6 +20,8 @@ A DIY 3D LiDAR built from a time-of-flight sensor on a pan–tilt servo mount. T
 - [x] Sensor and servos working together
 - [x] First draft of sensor data collected
 - [x] 3D sweeping motion achieved
+- [x] Mounting TOF on servos
+- [x] Recording sensor data 
 - [ ] ToF sensor calibration (in progress)
 - [ ] Convert CSV data to a 3D point cloud
 - [ ] IMU integration
