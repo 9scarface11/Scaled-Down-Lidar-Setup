@@ -1,3 +1,6 @@
+https://github.com/user-attachments/assets/5425dd05-36e1-41d0-8f0b-0dcabc7de7f0
+
+
 # Custom LiDAR
 
 A DIY 3D LiDAR built from a time-of-flight sensor on a pan–tilt servo mount. The sensor sweeps a scene, and every (pan angle, tilt angle, distance) reading is converted into a 3D point.
