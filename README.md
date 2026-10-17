@@ -12,6 +12,7 @@ A DIY 3D LiDAR built from a time-of-flight sensor on a pan–tilt servo mount. T
 | Component | Role |
 |---|---|
 | Arduino Nano | Controls the servos, reads the sensor, streams data over serial |
+| Arduino Uno | Controls the servos, reads the sensor, streams data over serial |
 | VL53L0X ToF sensor | Distance measurement (I2C) |
 | 2× SG90 servo | Pan (horizontal) and tilt (vertical) motion |
 | Buck converter | Stable 5 V supply for the servos |
@@ -28,9 +29,12 @@ A DIY 3D LiDAR built from a time-of-flight sensor on a pan–tilt servo mount. T
 - [x] Mounting TOF on servos
 - [x] Recording sensor data 
 - [ ] ToF sensor calibration (in progress)
-- [ ] Convert CSV data to a 3D point cloud
+- [x] Convert CSV data to a 3D point cloud
 - [ ] IMU integration
 - [ ] Mount on an RC car
+
+## Recent Upgrades
+Shifted to Arduino Uno
 
 ## How it works
 
