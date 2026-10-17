@@ -55,6 +55,11 @@ custom-lidar/
 │   ├── combined/
 |          ├── combined/    # Both sensor and servo integrated
 │   └── Vl53l0x_setup/      # TOF setup and calibration
+|
+├── Point Cloud Files/
+|          ├── file1.ply/             # python script for recording scanner and servo values
+|          ├── file2.ply/
+|
 ├── Point Cloud Raw/
 |          ├── logger.py/             # python script for recording scanner and servo values
 |          ├── csv/                   # (planned) recorded scans as CSV
