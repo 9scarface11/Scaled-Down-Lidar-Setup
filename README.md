@@ -18,7 +18,7 @@ A DIY 3D LiDAR built from a time-of-flight sensor on a pan–tilt servo mount. T
 | Buck converter | Stable 5 V supply for the servos |
 | MPU6050 *(planned)* | IMU for orientation / state estimation |
 
-**Wiring:** pan servo on D9, tilt servo on D10, ToF on I2C (A4/A5). Servos run from the buck converter's 5 V, the Nano is powered over USB, and all grounds are shared.
+**Wiring:** pan servo on D9, tilt servo on D10, ToF on I2C (A4/A5). Servos run from the buck converter's 5 V, the Nano/Uno is powered over USB, and all grounds are shared.
 
 ## Status
 
